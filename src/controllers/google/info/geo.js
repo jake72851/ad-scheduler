@@ -6,7 +6,7 @@ const CONFDB = require('../config/db');
 async function main() {
   const headers = {
     Authorization:
-      'Bearer ya29.a0AWY7CkktIH1lkBsQ-ImpyO36smIOUYzH_n1-cdSfMmerIu4dRg7XLkDTH7yCMCRMccZnLNtCUTj6KPXvrfNjGgfTTZhEl3TuZ47c8K31SdmBnzMGznhX8sL4cSxYaV3TUsVX_vLTs__vPY1sUMr268KvR18xMrMaCgYKAWkSARESFQG1tDrphZLgW8m1NB6kvIVhhTWAAg0166',
+      'Bearer ...',
     'developer-token': CONF.GOOGLE.DEVELOPER_TOKEN,
     'login-customer-id': CONF.GOOGLE.LOGIN_CUSTOMER_ID,
   };
@@ -31,8 +31,6 @@ async function main() {
     `,
   };
   const result = await axios.post(CONF.GOOGLE.API + '5318998392' + CONF.GOOGLE.API_END, data1, { headers });
-  // console.log('result =', result);
-  console.log('result.data.results =', result.data.results);
 
   const vad = await db.connection(CONFDB.DB.NAME);
   const userGoogle = vad.collection(CONFDB.DB.GOOGLE.GEO);
